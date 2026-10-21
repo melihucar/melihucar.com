@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="Inter, system-ui, sans-serif" font-size="14" role="img" aria-labelledby="t">
+  <title id="t">Markdown is pushed to main; GitHub Actions runs verse build; dist/ is uploaded as a Pages artifact and served at melihucar.com.</title>
+  <style>
+    .bg { fill: #f4f4f7; }
+    .box { fill: #ffffff; stroke: #635bdf; stroke-width: 2; }
+    .ci { fill: none; stroke: #9aa0a6; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .arrow { fill: none; stroke: #635bdf; stroke-width: 2; }
+    .label { fill: #202124; text-anchor: middle; font-weight: 600; }
+    .sub { fill: #5f6368; text-anchor: middle; font-size: 12; font-family: ui-monospace, Menlo, monospace; }
+    .group { fill: #5f6368; font-size: 12; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1c21; }
+      .box { fill: #26262d; stroke: #8f88ff; }
+      .arrow { stroke: #8f88ff; }
+      .ci { stroke: #6b6f76; }
+      .label { fill: #e8eaed; }
+      .sub, .group { fill: #a0a4ab; }
+    }
+  </style>
+  <rect class="bg" width="720" height="300"/>
+
+  <!-- Row 1: local -> push -->
+  <rect class="box" x="30" y="40" width="160" height="64" rx="8"/>
+  <text class="label" x="110" y="68">Markdown</text>
+  <text class="sub" x="110" y="88">content/articles/</text>
+
+  <rect class="box" x="280" y="40" width="160" height="64" rx="8"/>
+  <text class="label" x="360" y="68">git push</text>
+  <text class="sub" x="360" y="88">main</text>
+
+  <path class="arrow" d="M190 72h82m-8-6 8 6-8 6"/>
+
+  <!-- GitHub Actions group -->
+  <rect class="ci" x="20" y="140" width="680" height="140" rx="10"/>
+  <text class="group" x="684" y="162" text-anchor="end">GitHub Actions · deploy.yml</text>
+
+  <rect class="box" x="30" y="180" width="160" height="64" rx="8"/>
+  <text class="label" x="110" y="208">verse build</text>
+  <text class="sub" x="110" y="228">PHP 8.4</text>
+
+  <rect class="box" x="280" y="180" width="160" height="64" rx="8"/>
+  <text class="label" x="360" y="208">dist/</text>
+  <text class="sub" x="360" y="228">static HTML</text>
+
+  <rect class="box" x="530" y="180" width="160" height="64" rx="8"/>
+  <text class="label" x="610" y="208">GitHub Pages</text>
+  <text class="sub" x="610" y="228">melihucar.com</text>
+
+  <!-- push -> build (down and back left) -->
+  <path class="arrow" d="M360 104v18H110v50m-6-8 6 8 6-8"/>
+  <path class="arrow" d="M190 212h82m-8-6 8 6-8 6"/>
+  <path class="arrow" d="M440 212h82m-8-6 8 6-8 6"/>
+</svg>
