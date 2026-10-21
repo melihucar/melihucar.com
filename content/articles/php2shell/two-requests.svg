@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" font-family="Inter, system-ui, sans-serif" font-size="14" role="img" aria-labelledby="t">
+  <title id="t">Request A publishes request-owned state in a worker global, runs out of memory and is abandoned; its heap is freed but the global still points into it. Request B on the same worker reads the stale global before initialisation resets it.</title>
+  <style>
+    .bg { fill: #f4f4f7; }
+    .box { fill: #ffffff; stroke: #635bdf; stroke-width: 2; }
+    .bad { fill: #fff4f2; stroke: #d93025; stroke-width: 2; }
+    .global { fill: #ffffff; stroke: #9aa0a6; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .arrow { fill: none; stroke: #635bdf; stroke-width: 2; }
+    .stale { fill: none; stroke: #d93025; stroke-width: 2; stroke-dasharray: 6 4; }
+    .label { fill: #202124; font-weight: 600; }
+    .sub { fill: #5f6368; font-size: 12; }
+    .mono { font-family: ui-monospace, Menlo, monospace; }
+    .warn { fill: #d93025; font-size: 12; font-weight: 600; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1c21; }
+      .box, .global { fill: #26262d; }
+      .box { stroke: #8f88ff; }
+      .bad { fill: #3a2422; stroke: #f28b82; }
+      .global { stroke: #6b6f76; }
+      .arrow { stroke: #8f88ff; }
+      .stale { stroke: #f28b82; }
+      .label { fill: #e8eaed; }
+      .sub { fill: #a0a4ab; }
+      .warn { fill: #f28b82; }
+    }
+  </style>
+  <rect class="bg" width="720" height="360"/>
+
+  <!-- Lane labels -->
+  <text class="label" x="24" y="40">Request A</text>
+  <text class="label" x="24" y="300">Request B</text>
+  <text class="sub" x="24" y="170">Same worker</text>
+  <text class="sub" x="24" y="186">process</text>
+
+  <!-- Request A -->
+  <rect class="box" x="130" y="18" width="160" height="56" rx="8"/>
+  <text class="label" x="146" y="42">Request processing</text>
+  <text class="sub" x="146" y="60">stores state in worker</text>
+
+  <rect class="bad" x="320" y="18" width="160" height="56" rx="8"/>
+  <text class="label" x="336" y="42">Out of memory</text>
+  <text class="sub" x="336" y="60">work stops midway</text>
+
+  <rect class="box" x="510" y="18" width="180" height="56" rx="8"/>
+  <text class="label" x="526" y="42">Request heap freed</text>
+  <text class="sub" x="526" y="60">worker stays alive</text>
+
+  <path class="arrow" d="M290 46h22m-8-6 8 6-8 6"/>
+  <path class="arrow" d="M480 46h22m-8-6 8 6-8 6"/>
+
+  <!-- Worker global -->
+  <rect class="global" x="130" y="140" width="560" height="64" rx="10"/>
+  <text class="label mono" x="150" y="168">Worker-wide globals (session, errors, …)</text>
+  <text class="sub" x="150" y="188">Worker globals still point into the freed heap</text>
+
+  <path class="arrow" d="M210 74v58m-6-8 6 8 6-8"/>
+  <path class="stale" d="M600 140V82m-6 8 6-8 6 8"/>
+  <text class="warn" x="610" y="118">dangling</text>
+
+  <!-- Request B -->
+  <rect class="box" x="130" y="272" width="200" height="56" rx="8"/>
+  <text class="label" x="146" y="296">Early request handling</text>
+  <text class="sub" x="146" y="314">before state is reset</text>
+
+  <rect class="bad" x="360" y="272" width="200" height="56" rx="8"/>
+  <text class="label" x="376" y="296">Uses stale state</text>
+  <text class="sub" x="376" y="314">memory already freed</text>
+
+  <path class="arrow" d="M330 300h22m-8-6 8 6-8 6"/>
+  <path class="stale" d="M460 204v60m-6-8 6 8 6-8"/>
+</svg>
