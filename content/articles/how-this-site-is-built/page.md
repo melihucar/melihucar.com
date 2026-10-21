@@ -37,7 +37,7 @@ Each file starts with a little front matter:
 ---
 title: How This Site Is Built
 description: Markdown files, a small PHP static site generator, and one GitHub Actions workflow.
-date: 2026-10-21T13:01Z
+date: 2026-10-21
 tags: [Verse, AstroPHP, GitHub Pages, Static Sites]
 ---
 ```
