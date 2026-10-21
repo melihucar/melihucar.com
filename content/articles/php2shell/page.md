@@ -1,7 +1,7 @@
 ---
 title: "PHP2Shell: How Running Out of Memory Became Remote Code Execution"
 description: Two critical PHP vulnerabilities turned an out-of-memory error into unauthenticated code execution. What broke, how it was found, how PHP fixed it, and what to do now.
-date: 2026-10-21
+date: 2026-10-21T16:22Z
 tags: [PHP, Security, Memory Safety, Vulnerability]
 ---
 
