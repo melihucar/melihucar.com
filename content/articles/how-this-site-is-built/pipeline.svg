@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="Inter, system-ui, sans-serif" font-size="14" role="img" aria-labelledby="t">
-  <title id="t">Markdown is pushed to main; GitHub Actions runs verse build; dist/ is uploaded as a Pages artifact and served at melihucar.com.</title>
+  <title id="t">Markdown is pushed to main; GitHub Actions runs verse build; dist/ is deployed to Cloudflare Pages and served at melihucar.com.</title>
   <style>
     .bg { fill: #f4f4f7; }
     .box { fill: #ffffff; stroke: #635bdf; stroke-width: 2; }
@@ -43,7 +43,7 @@
   <text class="sub" x="360" y="228">static HTML</text>
 
   <rect class="box" x="530" y="180" width="160" height="64" rx="8"/>
-  <text class="label" x="610" y="208">GitHub Pages</text>
+  <text class="label" x="610" y="208">Cloudflare Pages</text>
   <text class="sub" x="610" y="228">melihucar.com</text>
 
   <!-- push -> build (down and back left) -->

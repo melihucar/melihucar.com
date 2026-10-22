@@ -2,16 +2,16 @@
 title: How This Site Is Built
 description: Markdown files, a small PHP static site generator, and one GitHub Actions workflow. The whole publishing pipeline behind melihucar.com.
 date: 2026-10-21T13:01Z
-tags: [Verse, AstroPHP, GitHub Pages, Static Sites]
+tags: [Verse, AstroPHP, Cloudflare Pages, Static Sites]
 ---
 
 This is the first article written for this site rather than linked from somewhere else, so it seems fair to start with the site itself: what it is made of, how a Markdown file becomes a page at melihucar.com, and what I deliberately left out.
 
 ## The short version
 
-Every page here is a Markdown file in a Git repository. When I push to `main`, a GitHub Actions workflow builds the site with [Verse](https://github.com/astrophp/verse) and publishes the result to GitHub Pages. There is no server, no database, and no admin panel.
+Every page here is a Markdown file in a Git repository. When I push to `main`, a GitHub Actions workflow builds the site with [Verse](https://github.com/astrophp/verse) and publishes the result to Cloudflare Pages. There is no server, no database, and no admin panel.
 
-![Markdown is pushed to main; GitHub Actions runs verse build; dist/ is uploaded as a Pages artifact and served at melihucar.com.](pipeline.svg "From a Markdown file to melihucar.com")
+![Markdown is pushed to main; GitHub Actions runs verse build; dist/ is deployed to Cloudflare Pages and served at melihucar.com.](pipeline.svg "From a Markdown file to melihucar.com")
 
 ## Content is just files
 
@@ -38,7 +38,7 @@ Each file starts with a little front matter:
 title: How This Site Is Built
 description: Markdown files, a small PHP static site generator, and one GitHub Actions workflow.
 date: 2026-10-21
-tags: [Verse, AstroPHP, GitHub Pages, Static Sites]
+tags: [Verse, AstroPHP, Cloudflare Pages, Static Sites]
 ---
 ```
 
@@ -60,16 +60,21 @@ name: deploy
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  deployments: write
+
+concurrency:
+  group: deploy-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
 
@@ -77,30 +82,34 @@ jobs:
         with:
           php-version: '8.4'
           extensions: intl, mbstring
+          coverage: none
 
       - name: Install Verse
         run: |
-          composer global require astrophp/verse --no-interaction
+          composer global require astrophp/verse --no-interaction --no-progress
           echo "$(composer global config bin-dir --absolute --quiet)" >> "$GITHUB_PATH"
 
       - run: verse build
 
-      - uses: actions/upload-pages-artifact@v5
+      # main deploys to production; any other branch gets a preview URL.
+      - uses: cloudflare/wrangler-action@v4.1.3
         with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-    steps:
-      - uses: actions/deploy-pages@v5
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          preCommands: wrangler pages project create melihucar-com --production-branch=main || true
+          command: pages deploy dist --project-name=melihucar-com --branch=${{ github.head_ref || github.ref_name }}
 ```
 
-The build job installs PHP, installs Verse with Composer, and runs `verse build`, which writes the finished site to `dist/`. That folder is uploaded as a Pages artifact, and the deploy job publishes it. Nothing is committed back to the repository; there is no `gh-pages` branch to keep in sync.
+The job installs PHP, installs Verse with Composer, and runs `verse build`, which writes the finished site to `dist/`. Wrangler, Cloudflare's CLI, then uploads that folder to Cloudflare Pages. Nothing is committed back to the repository; there is no `gh-pages` branch to keep in sync.
 
-The `permissions` block is worth a note. `pages: write` and `id-token: write` are what let `deploy-pages` publish without a personal access token stored in secrets.
+The branch name decides where a build lands. A push to `main` goes to production at melihucar.com, while a pull request gets its own preview URL, so I can read a new article on the real stack before merging it. The `concurrency` block cancels an older run for the same branch when a newer push arrives.
+
+The Cloudflare API token and account ID live in repository secrets. The `deployments: write` permission lets Wrangler record each deploy as a GitHub deployment, which is how the preview link shows up on the pull request.
+
+### Why not GitHub Pages
+
+The first version of this pipeline deployed to GitHub Pages, and the build side worked fine. The custom domain did not: GitHub got stuck at the DNS verification step for melihucar.com, and without a verified domain it would not let me turn on HTTPS. Rather than keep waiting on it, I moved the deploy step to Cloudflare Pages. There, HTTPS was on as soon as the domain was attached, and branch previews came along for free. The build itself did not change at all; only the last step did.
 
 ## Writing locally
 
