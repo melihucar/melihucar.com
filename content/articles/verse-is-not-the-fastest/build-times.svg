@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 394" font-family="Inter, system-ui, sans-serif" font-size="14" role="img" aria-labelledby="t">
+  <title id="t">Build time for 1,000 articles in seconds, default concurrency vs concurrency limited. Hugo 0.66 vs 1.62; Zola 0.97 vs 0.97; Jigsaw 1.32 vs 1.44; Eleventy 1.35 vs 2.12; Verse 1.55 vs 1.63; Astro 3.31 vs 4.54.</title>
+  <style>
+    .bg { fill: #f4f4f7; }
+    .t { fill: #202124; font-weight: 600; }
+    .lab { fill: #202124; }
+    .val { fill: #5f6368; font-size: 12px; }
+    .note { fill: #5f6368; font-size: 12px; }
+    .grid { stroke: #dadce0; stroke-width: 1; }
+    .s1 { fill: #635bdf; }
+    .s2 { fill: #eb6834; }
+    .mute { fill: #9aa0a6; }
+    .hatch { fill: url(#h); }
+    .hl { stroke: #9aa0a6; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1c21; }
+      .t, .lab { fill: #e8eaed; }
+      .val, .note { fill: #a0a4ab; }
+      .grid { stroke: #3c3c43; }
+      .s1 { fill: #7d75f0; }
+      .s2 { fill: #d95926; }
+      .mute { fill: #6b6f76; }
+      .hl { stroke: #6b6f76; }
+    }
+  </style>
+  <rect class="bg" width="720" height="394"/>
+  <text class="t" x="20" y="30">Clean build, 1,000 articles (mean of 15 builds, seconds, lower is faster)</text>
+  <path class="s1" d="M20.0 44.0h10.0a4 4 0 0 1 4 4v4.0a4 4 0 0 1 -4 4h-10.0z"/>
+  <text class="lab" x="40" y="55" font-size="13">Default concurrency</text>
+  <path class="s2" d="M170.0 44.0h10.0a4 4 0 0 1 4 4v4.0a4 4 0 0 1 -4 4h-10.0z"/>
+  <text class="lab" x="190" y="55" font-size="13">Concurrency limited</text>
+  <line class="grid" x1="130.0" y1="72" x2="130.0" y2="348"/>
+  <text class="val" x="130.0" y="364" text-anchor="middle">0 s</text>
+  <line class="grid" x1="234.0" y1="72" x2="234.0" y2="348"/>
+  <text class="val" x="234.0" y="364" text-anchor="middle">1 s</text>
+  <line class="grid" x1="338.0" y1="72" x2="338.0" y2="348"/>
+  <text class="val" x="338.0" y="364" text-anchor="middle">2 s</text>
+  <line class="grid" x1="442.0" y1="72" x2="442.0" y2="348"/>
+  <text class="val" x="442.0" y="364" text-anchor="middle">3 s</text>
+  <line class="grid" x1="546.0" y1="72" x2="546.0" y2="348"/>
+  <text class="val" x="546.0" y="364" text-anchor="middle">4 s</text>
+  <line class="grid" x1="650.0" y1="72" x2="650.0" y2="348"/>
+  <text class="val" x="650.0" y="364" text-anchor="middle">5 s</text>
+  <text class="lab" x="120" y="97" text-anchor="end">Hugo</text>
+  <path class="s1" d="M130.0 78.0h64.7a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-64.7z"/>
+  <text class="val" x="204.7" y="90">0.66</text>
+  <path class="s2" d="M130.0 95.0h164.8a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-164.8z"/>
+  <text class="val" x="304.8" y="107">1.62</text>
+  <text class="lab" x="120" y="143" text-anchor="end">Zola</text>
+  <path class="s1" d="M130.0 124.0h97.3a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-97.3z"/>
+  <text class="val" x="237.3" y="136">0.97</text>
+  <path class="s2" d="M130.0 141.0h97.0a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-97.0z"/>
+  <text class="val" x="237.0" y="153">0.97</text>
+  <text class="lab" x="120" y="189" text-anchor="end">Jigsaw</text>
+  <path class="s1" d="M130.0 170.0h133.7a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-133.7z"/>
+  <text class="val" x="273.7" y="182">1.32</text>
+  <path class="s2" d="M130.0 187.0h145.5a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-145.5z"/>
+  <text class="val" x="285.5" y="199">1.44</text>
+  <text class="lab" x="120" y="235" text-anchor="end">Eleventy</text>
+  <path class="s1" d="M130.0 216.0h136.9a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-136.9z"/>
+  <text class="val" x="276.9" y="228">1.35</text>
+  <path class="s2" d="M130.0 233.0h216.0a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-216.0z"/>
+  <text class="val" x="356.0" y="245">2.12</text>
+  <text class="lab" x="120" y="281" text-anchor="end" font-weight="600">Verse</text>
+  <path class="s1" d="M130.0 262.0h157.3a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-157.3z"/>
+  <text class="val" x="297.3" y="274">1.55</text>
+  <path class="s2" d="M130.0 279.0h165.4a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-165.4z"/>
+  <text class="val" x="305.4" y="291">1.63</text>
+  <text class="lab" x="120" y="327" text-anchor="end">Astro</text>
+  <path class="s1" d="M130.0 308.0h340.5a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-340.5z"/>
+  <text class="val" x="480.5" y="320">3.31</text>
+  <path class="s2" d="M130.0 325.0h468.2a4 4 0 0 1 4 4v7.0a4 4 0 0 1 -4 4h-468.2z"/>
+  <text class="val" x="608.2" y="337">4.54</text>
+</svg>
