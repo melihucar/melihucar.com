@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 422" font-family="Inter, system-ui, sans-serif" font-size="14" role="img" aria-labelledby="t">
+  <title id="t">Where a 1,000-article Verse v0.3.2 build spends its time, in seconds: Markdown, without the code block 0.487; Code block: highlighting 0.065; Code block: everything else 0.044; Blade views and the rest of rendering 0.421; Writing 15.5 MB of HTML 0.222; Scanning content and front matter 0.091; Validating the output 0.040; Config and renderer setup 0.012; search.json + sitemap + theme assets 0.007.</title>
+  <style>
+    .bg { fill: #f4f4f7; }
+    .t { fill: #202124; font-weight: 600; }
+    .lab { fill: #202124; }
+    .val { fill: #5f6368; font-size: 12px; }
+    .note { fill: #5f6368; font-size: 12px; }
+    .grid { stroke: #dadce0; stroke-width: 1; }
+    .s1 { fill: #635bdf; }
+    .s2 { fill: #eb6834; }
+    .mute { fill: #9aa0a6; }
+    .hatch { fill: url(#h); }
+    .hl { stroke: #9aa0a6; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1c21; }
+      .t, .lab { fill: #e8eaed; }
+      .val, .note { fill: #a0a4ab; }
+      .grid { stroke: #3c3c43; }
+      .s1 { fill: #7d75f0; }
+      .s2 { fill: #d95926; }
+      .mute { fill: #6b6f76; }
+      .hl { stroke: #6b6f76; }
+    }
+  </style>
+  <defs><pattern id="h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#635bdf" opacity="0.35"/><line x1="0" y1="0" x2="0" y2="6" stroke="#635bdf" stroke-width="3"/></pattern></defs>
+  <rect class="bg" width="720" height="422"/>
+  <text class="t" x="20" y="30">Verse v0.3.2, 1,000 articles: seconds per part of the build (mean of 5 runs)</text>
+  <line class="grid" x1="290.0" y1="54" x2="290.0" y2="360"/>
+  <text class="val" x="290.0" y="376" text-anchor="middle">0.0 s</text>
+  <line class="grid" x1="350.0" y1="54" x2="350.0" y2="360"/>
+  <text class="val" x="350.0" y="376" text-anchor="middle">0.1 s</text>
+  <line class="grid" x1="410.0" y1="54" x2="410.0" y2="360"/>
+  <text class="val" x="410.0" y="376" text-anchor="middle">0.2 s</text>
+  <line class="grid" x1="470.0" y1="54" x2="470.0" y2="360"/>
+  <text class="val" x="470.0" y="376" text-anchor="middle">0.3 s</text>
+  <line class="grid" x1="530.0" y1="54" x2="530.0" y2="360"/>
+  <text class="val" x="530.0" y="376" text-anchor="middle">0.4 s</text>
+  <line class="grid" x1="590.0" y1="54" x2="590.0" y2="360"/>
+  <text class="val" x="590.0" y="376" text-anchor="middle">0.5 s</text>
+  <line class="grid" x1="650.0" y1="54" x2="650.0" y2="360"/>
+  <text class="val" x="650.0" y="376" text-anchor="middle">0.6 s</text>
+  <text class="lab" x="280" y="75" text-anchor="end">Markdown, without the code block</text>
+  <path class="s1" d="M290.0 62.0h288.1a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-288.1z"/>
+  <text class="val" x="588.1" y="75">0.487</text>
+  <text class="lab" x="280" y="109" text-anchor="end">Code block: highlighting</text>
+  <path class="s2" d="M290.0 96.0h35.0a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-35.0z"/>
+  <text class="val" x="335.0" y="109">0.065</text>
+  <text class="lab" x="280" y="143" text-anchor="end">Code block: everything else</text>
+  <path class="s2" d="M290.0 130.0h22.6a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-22.6z"/>
+  <text class="val" x="322.6" y="143">0.044</text>
+  <text class="lab" x="280" y="177" text-anchor="end">Blade views and the rest of rendering*</text>
+  <path class="hatch" d="M290.0 164.0h248.4a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-248.4z"/>
+  <text class="val" x="548.4" y="177">0.421</text>
+  <text class="lab" x="280" y="211" text-anchor="end">Writing 15.5 MB of HTML</text>
+  <path class="s1" d="M290.0 198.0h129.0a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-129.0z"/>
+  <text class="val" x="429.0" y="211">0.222</text>
+  <text class="lab" x="280" y="245" text-anchor="end">Scanning content and front matter</text>
+  <path class="s1" d="M290.0 232.0h50.6a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-50.6z"/>
+  <text class="val" x="350.6" y="245">0.091</text>
+  <text class="lab" x="280" y="279" text-anchor="end">Validating the output</text>
+  <path class="s1" d="M290.0 266.0h19.8a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-19.8z"/>
+  <text class="val" x="319.8" y="279">0.040</text>
+  <text class="lab" x="280" y="313" text-anchor="end">Config and renderer setup</text>
+  <path class="s1" d="M290.0 300.0h3.5a3.4799999999999995 3.4799999999999995 0 0 1 3.4799999999999995 3.4799999999999995v11.0a3.4799999999999995 3.4799999999999995 0 0 1 -3.4799999999999995 3.4799999999999995h-3.5z"/>
+  <text class="val" x="303.0" y="313">0.012</text>
+  <text class="lab" x="280" y="347" text-anchor="end">search.json + sitemap + theme assets</text>
+  <path class="s1" d="M290.0 334.0h2.1a2.1 2.1 0 0 1 2.1 2.1v13.8a2.1 2.1 0 0 1 -2.1 2.1h-2.1z"/>
+  <text class="val" x="300.2" y="347">0.007</text>
+  <text class="note" x="20" y="408">* Inferred: render-pages time minus the Markdown time, measured in a separate script. Orange: the code block.</text>
+</svg>

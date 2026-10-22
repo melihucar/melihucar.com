@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 296" font-family="Inter, system-ui, sans-serif" font-size="14" role="img" aria-labelledby="t">
+  <title id="t">Peak resident memory of the largest single process for a 1,000-article build, in MB: Verse 60; Jigsaw 65; Zola 122; Hugo 172; Eleventy 210; Astro 654.</title>
+  <style>
+    .bg { fill: #f4f4f7; }
+    .t { fill: #202124; font-weight: 600; }
+    .lab { fill: #202124; }
+    .val { fill: #5f6368; font-size: 12px; }
+    .note { fill: #5f6368; font-size: 12px; }
+    .grid { stroke: #dadce0; stroke-width: 1; }
+    .s1 { fill: #635bdf; }
+    .s2 { fill: #eb6834; }
+    .mute { fill: #9aa0a6; }
+    .hatch { fill: url(#h); }
+    .hl { stroke: #9aa0a6; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1c21; }
+      .t, .lab { fill: #e8eaed; }
+      .val, .note { fill: #a0a4ab; }
+      .grid { stroke: #3c3c43; }
+      .s1 { fill: #7d75f0; }
+      .s2 { fill: #d95926; }
+      .mute { fill: #6b6f76; }
+      .hl { stroke: #6b6f76; }
+    }
+  </style>
+  <rect class="bg" width="720" height="296"/>
+  <text class="t" x="20" y="30">Peak resident memory of the largest single process, 1,000 articles (mean, MB)</text>
+  <line class="grid" x1="130.0" y1="46" x2="130.0" y2="250"/>
+  <text class="val" x="130.0" y="266" text-anchor="middle">0</text>
+  <line class="grid" x1="201.4" y1="46" x2="201.4" y2="250"/>
+  <text class="val" x="201.4" y="266" text-anchor="middle">100</text>
+  <line class="grid" x1="272.9" y1="46" x2="272.9" y2="250"/>
+  <text class="val" x="272.9" y="266" text-anchor="middle">200</text>
+  <line class="grid" x1="344.3" y1="46" x2="344.3" y2="250"/>
+  <text class="val" x="344.3" y="266" text-anchor="middle">300</text>
+  <line class="grid" x1="415.7" y1="46" x2="415.7" y2="250"/>
+  <text class="val" x="415.7" y="266" text-anchor="middle">400</text>
+  <line class="grid" x1="487.1" y1="46" x2="487.1" y2="250"/>
+  <text class="val" x="487.1" y="266" text-anchor="middle">500</text>
+  <line class="grid" x1="558.6" y1="46" x2="558.6" y2="250"/>
+  <text class="val" x="558.6" y="266" text-anchor="middle">600</text>
+  <line class="grid" x1="630.0" y1="46" x2="630.0" y2="250"/>
+  <text class="val" x="630.0" y="266" text-anchor="middle">700</text>
+  <text class="lab" x="120" y="67" text-anchor="end" font-weight="600">Verse</text>
+  <path class="s1" d="M130.0 54.0h39.0a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-39.0z"/>
+  <text class="val" x="179.0" y="67">60 MB</text>
+  <text class="lab" x="120" y="101" text-anchor="end">Jigsaw</text>
+  <path class="mute" d="M130.0 88.0h42.7a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-42.7z"/>
+  <text class="val" x="182.7" y="101">65 MB</text>
+  <text class="lab" x="120" y="135" text-anchor="end">Zola</text>
+  <path class="mute" d="M130.0 122.0h83.0a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-83.0z"/>
+  <text class="val" x="223.0" y="135">122 MB</text>
+  <text class="lab" x="120" y="169" text-anchor="end">Hugo</text>
+  <path class="mute" d="M130.0 156.0h118.6a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-118.6z"/>
+  <text class="val" x="258.6" y="169">172 MB</text>
+  <text class="lab" x="120" y="203" text-anchor="end">Eleventy</text>
+  <path class="mute" d="M130.0 190.0h146.3a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-146.3z"/>
+  <text class="val" x="286.3" y="203">210 MB</text>
+  <text class="lab" x="120" y="237" text-anchor="end">Astro</text>
+  <path class="mute" d="M130.0 224.0h463.4a4 4 0 0 1 4 4v10.0a4 4 0 0 1 -4 4h-463.4z"/>
+  <text class="val" x="603.4" y="237">654 MB</text>
+</svg>
