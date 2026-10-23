@@ -2,7 +2,7 @@
 title: "Semantic Memory: How AI Agents Remember What Matters"
 description: A language model doesn't carry what you told it into the next conversation. Semantic memory is how an AI application keeps what it learns. How it works, how it differs from RAG, and why it is harder than it looks.
 date: 2026-10-23
-tags: [AI systems, Memory, Agents]
+tags: [AI systems, AI Agents, Agent Memory, RAG]
 ---
 
 You can save every message an AI agent has ever received and still end up with an agent that has a bad memory. It brings up a decision that was reversed a week later. It treats a passing suggestion as a requirement. It forgets a preference it was told twice.
