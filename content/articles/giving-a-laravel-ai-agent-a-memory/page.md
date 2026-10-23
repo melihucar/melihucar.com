@@ -1,7 +1,7 @@
 ---
 title: "Giving a Laravel AI Agent a Memory"
 description: "Episode 1: a Laravel AI chat assistant forgets everything between conversations. We add a memory with two tools and a background job, watch the same chat work, and inspect it in Trail."
-date: 2026-10-24T10:00+03:00
+date: 2026-10-24T00:00Z
 tags: [AI systems, AI Agents, Agent Memory, Laravel]
 ---
 
