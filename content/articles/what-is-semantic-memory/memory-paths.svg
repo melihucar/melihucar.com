@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 370" font-family="Inter, system-ui, sans-serif" font-size="14" role="img" aria-labelledby="t">
+  <title id="t">Write path: a conversation is turned into facts by an extraction step, reconciled with existing memories, and saved to the memory store. Read path: a new message is used to retrieve and rank memories from the store, which are added to the model's prompt.</title>
+  <style>
+    .bg { fill: #f4f4f7; }
+    .box { fill: #ffffff; stroke: #635bdf; stroke-width: 2; }
+    .store { fill: #efeefe; stroke: #635bdf; stroke-width: 2; }
+    .group-box { fill: none; stroke: #9aa0a6; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .arrow { fill: none; stroke: #635bdf; stroke-width: 2; }
+    .label { fill: #202124; text-anchor: middle; font-weight: 600; }
+    .sub { fill: #5f6368; text-anchor: middle; font-size: 12; font-family: ui-monospace, Menlo, monospace; }
+    .group { fill: #5f6368; font-size: 12; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1c21; }
+      .box { fill: #26262d; stroke: #8f88ff; }
+      .store { fill: #2f2d45; stroke: #8f88ff; }
+      .arrow { stroke: #8f88ff; }
+      .group-box { stroke: #6b6f76; }
+      .label { fill: #e8eaed; }
+      .sub, .group { fill: #a0a4ab; }
+    }
+  </style>
+  <rect class="bg" width="720" height="370"/>
+
+  <!-- Write path -->
+  <text class="group" x="20" y="24">Write path · after a conversation</text>
+  <rect class="group-box" x="20" y="34" width="680" height="90" rx="10"/>
+
+  <rect class="box" x="40" y="49" width="150" height="60" rx="8"/>
+  <text class="label" x="115" y="75">Conversation</text>
+  <text class="sub" x="115" y="94">messages</text>
+
+  <rect class="box" x="230" y="49" width="150" height="60" rx="8"/>
+  <text class="label" x="305" y="75">Extract</text>
+  <text class="sub" x="305" y="94">LLM → facts</text>
+
+  <rect class="box" x="420" y="49" width="150" height="60" rx="8"/>
+  <text class="label" x="495" y="75">Reconcile</text>
+  <text class="sub" x="495" y="94">add/update/delete</text>
+
+  <path class="arrow" d="M190 79h32m-8-6 8 6-8 6"/>
+  <path class="arrow" d="M380 79h32m-8-6 8 6-8 6"/>
+
+  <!-- Store -->
+  <rect class="store" x="200" y="160" width="320" height="60" rx="8"/>
+  <text class="label" x="360" y="186">Memory store</text>
+  <text class="sub" x="360" y="205">facts + embeddings</text>
+
+  <path class="arrow" d="M495 109v43m-6-8 6 8 6-8"/>
+
+  <!-- Read path -->
+  <text class="group" x="20" y="250">Read path · on every request</text>
+  <rect class="group-box" x="20" y="260" width="680" height="90" rx="10"/>
+
+  <rect class="box" x="35" y="275" width="145" height="60" rx="8"/>
+  <text class="label" x="107.5" y="301">New message</text>
+  <text class="sub" x="107.5" y="320">the query</text>
+
+  <rect class="box" x="205" y="275" width="145" height="60" rx="8"/>
+  <text class="label" x="277.5" y="301">Retrieve</text>
+  <text class="sub" x="277.5" y="320">scoped search</text>
+
+  <rect class="box" x="375" y="275" width="145" height="60" rx="8"/>
+  <text class="label" x="447.5" y="301">Rank</text>
+  <text class="sub" x="447.5" y="320">relevance, age</text>
+
+  <rect class="box" x="545" y="275" width="145" height="60" rx="8"/>
+  <text class="label" x="617.5" y="301">Prompt</text>
+  <text class="sub" x="617.5" y="320">token budget</text>
+
+  <path class="arrow" d="M277.5 220v47m-6-8 6 8 6-8"/>
+  <path class="arrow" d="M180 305h17m-8-6 8 6-8 6"/>
+  <path class="arrow" d="M350 305h17m-8-6 8 6-8 6"/>
+  <path class="arrow" d="M520 305h17m-8-6 8 6-8 6"/>
+</svg>
