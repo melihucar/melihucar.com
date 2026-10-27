@@ -281,4 +281,7 @@ It is also easy to break:
 - **Facts never change.** If Carol moves back to plain JavaScript, the assistant will believe both.
 - **Models do odd things after tool calls.** Twice in testing, the reply after a recall came back in Chinese, although everything sent to the model was English. That is why the instructions now say "Answer in the same language as the user's message". It's cheap insurance, not a guaranteed fix.
 
-Each of these is a problem from the "Where it gets hard" list in the first article, now showing up in real code. I'm working on them for the next episode, which will be published separately: recall by meaning with embeddings, extraction once per conversation instead of once per message, and facts that replace older ones.
+Each of these is a problem from the "Where it gets hard" list in the first article, now showing up in real code. The next episode fixes them: recall by meaning with embeddings, extraction once per conversation instead of once per message, and facts that replace older ones.
+
+> [!TIP] Continue reading
+> Episode 2: [Making Laravel Agent Memory Cheaper and Smarter](/articles/making-laravel-agent-memory-cheaper-and-smarter/)
