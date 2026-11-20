@@ -1,7 +1,7 @@
 ---
 title: "PHP 8.6: Partial Function Application and Pipes"
 description: "PHP 8.6 adds partial function application, which makes the pipe operator from PHP 8.5 much easier to use. How it works, a small refactoring, and the other changes in 8.6."
-date: 2026-11-20T12:00Z
+date: 2026-11-20T11:00Z
 tags: [PHP, PHP 8.6, Laravel]
 ---
 
